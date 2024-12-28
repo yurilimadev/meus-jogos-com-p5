@@ -1,9 +1,9 @@
 //código para carros
-let xCarros = [400,400,400,400,400]
-let yCarros = [-115,-55,5,65,125]
+let xCarros = [1840,1840,1840,1840,1840,1840,1840,1840,1840,1840]
+let yCarros = [-50,0,100,150,250,300,400,450,550,600]
 let comprimentoCarro = 0
 let alturaCarro = 0
-let velocidadeCarros = [2.3,3.3,3,2,5]
+let velocidadeCarros = [10,8,5,4,12,4,10,8,6,5]
 
 
 function mostraCarro(){
@@ -21,11 +21,11 @@ function movimentaCarro(){
 function voltaPosicaoInicialDoCarro(){
   for (let i = 0; i<xCarros.length;i++){
       if (passouTodaATela(xCarros[i])){
-      xCarros[i] = 400;
+      xCarros[i] = 1840;
     }
   }
 }
 
 function passouTodaATela(xCarro){
-  return xCarro < -450;
+  return xCarro < -600;
 }
