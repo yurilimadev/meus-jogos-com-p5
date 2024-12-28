@@ -3,8 +3,8 @@
 let xBolinha = 300;
 let yBolinha = 200;
 let diametro = 15;
-let velocidadeXBolinha = 5;
-let velocidadeYBolinha = 5;
+let velocidadeXBolinha = 10;
+let velocidadeYBolinha = 10;
 
 let raio = diametro / 2;
 
@@ -18,8 +18,7 @@ let jAltura = 90;
 let velocidadejogador = 1;
 
 // Variaveis Oponente
-
-let xRaqueteOponente = 585;
+let xRaqueteOponente = 1840;
 let yRaqueteOponente = 150;
 let oComprimento = 10;
 let oAltura = 90;
@@ -38,8 +37,8 @@ let trilha;
 
 //Janela
 function setup() {
-  createCanvas(600, 400);
-  trilha.loop();
+  createCanvas(windowWidth, windowHeight);
+  //trilha.loop();
 }
 
 // Main
@@ -118,7 +117,7 @@ function verificaColisaoBolinha(){
 }
 
 function verificacaoColisaoJogador(){
-  colidiu = collideRectCircle(xRaqueteJogador, yRaqueteJogador,jComprimento, jAltura, xBolinha, yBolinha, raio);
+  colidiu = collideRectCircle(xRaqueteJogador, yRaqueteJogador,jComprimento, jAltura, xBolinha, yBolinha, diametro);
   if (colidiu){
     velocidadeXBolinha *= -1;
     raquetada.play();
@@ -126,7 +125,7 @@ function verificacaoColisaoJogador(){
 }
 
 function verificacaoColisaoOponente(){
-  colidiu = collideRectCircle(xRaqueteOponente, yRaqueteOponente,oComprimento, oAltura, xBolinha, yBolinha, raio);
+  colidiu = collideRectCircle(xRaqueteOponente, yRaqueteOponente,oComprimento, oAltura, xBolinha, yBolinha, diametro);
   if (colidiu){
     velocidadeXBolinha *= -1;
     raquetada.play();
@@ -139,17 +138,17 @@ function incluirPlacar(){
   textAlign(CENTER);
   textSize(16);
   fill(255, 102, 0);
-  rect(150,10,40,20);
+  rect(740,10,40,20);
   fill(255);
-  text(meusPontos, 170, 26);
+  text(meusPontos, 760, 26);
   fill(255,102,0);
-  rect(450,10,40,20);
+  rect(1040,10,40,20);
   fill(255);
-  text(pontosOponente, 470, 26);
+  text(pontosOponente, 1060, 26);
 }
 
 function marcarPonto(){
-  if (xBolinha > 590) {
+  if (xBolinha > 1850) {
       meusPontos += 1;
       ponto.play();
       }
@@ -183,8 +182,8 @@ function bolinhaNaoFicaPresa(){
     if (xBolinha - raio < 0){
       xBolinha = 23
     }
-    if (xBolinha + raio > 600){
-      xBolinha = 580
+    if (xBolinha + raio > 1840){
+      xBolinha = 1820
     }
 }
 

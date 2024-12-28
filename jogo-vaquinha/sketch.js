@@ -1,5 +1,5 @@
 function setup() {
-  createCanvas(600, 400);
+  createCanvas(windowWidth, windowHeight);
   //sons do jogo ficam em setup!
   somDaTrilha.loop();
   
